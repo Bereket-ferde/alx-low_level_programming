@@ -1,45 +1,6 @@
 #include <stdio.h>
 
 /**
- *printfizz - print the word fuzz
- *
- *
- */
-void printfizz(void)
-{
-	putchar('F');
-	putchar('i');
-	putchar('z');
-	putchar('z');
-}
-
-/**
- *printbuzz - print the word buzz
- *
- *
- */
-void printbuzz(void)
-{
-	putchar('B');
-	putchar('u');
-	putchar('z');
-	putchar('z');
-
-}
-
-/**
- *printfizzbuzz - print the word fizzbuzz
- *
- *
- */
-void printfizzbuzz(void)
-{
-	printfizz();
-	putchar(' ');
-	printbuzz();
-
-}
-/**
  * main - prints "Fizz" for numbers divisible by 3,
  * prints "Buzz" for numbers divisible by 5,
  * prints "FizzBuzz" for numbers divisible by 3 and 5
@@ -53,17 +14,14 @@ int main(void)
 	for (i = 1; i <= 99; i++)
 	{
 		if (i % 15 == 0)
-			printfizzbuzz();
+			printf("FizzBuzz ");
 		else if (i % 3 == 0)
-			printfizz();
+			printf("Fizz ");
 		else if (i % 5 == 0)
-			printbuzz();
+			printf("Buzz ");
 		else
-			printf("%i", i);
-		putchar(' ');
+			printf("%i ", i);
 	}
-
-	printbuzz();
-	putchar('\n');
+	printf("Buzz\n");
 	return (0);
 }
