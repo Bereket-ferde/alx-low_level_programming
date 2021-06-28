@@ -10,8 +10,8 @@ int main(void)
 {
 
 srand(time(0));
-int num; 
-  num = rand();
-printf("%i\n",num);
+
+for(int i = 0; i<4; i++)
+    printf("%i\n", rand());
 return (0);
 }
