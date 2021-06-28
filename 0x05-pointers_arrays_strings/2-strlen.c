@@ -2,11 +2,18 @@
 
 /**
  * _strlen - count the value of the string
- * @s: pointer s
+ * @s: string s
+ * Reutrn: length of the string
  */
 void _strlen(char *s)
 {
-        int x;
+        int len = 0;
 
-        x = strlen(*s);
+        while(*s);
+	{
+	  len += 1;
+	  s += 1;
+
+	}
+	return (len);
 }
