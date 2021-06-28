@@ -9,10 +9,10 @@
 int main(void)
 {
 
-int num = rand();
+int num = rand(), i;
 srand(time(0));
 
-  for(int i = 0; i<4; i++)
+  for(i = 0; i<4; i++)
       printf("%d\n", num);
 return (0);
 }
