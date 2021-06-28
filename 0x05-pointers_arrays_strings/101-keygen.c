@@ -12,6 +12,6 @@ int main(void)
 int num = rand();
 srand(time(0));
 
-printf("%d\n", num);
+printf("%i\n", num);
 return (0);
 }
