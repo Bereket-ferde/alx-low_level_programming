@@ -6,15 +6,17 @@
  */
 int _strlen(char *s)
 {
+
 	int length = 0;
-	
+
 	while (*s)
-	{
+{
 		s++;
 		length++;
-	}
+}
 	return (length);
 }
+
 /**
  * rev_string - reverses a string
  * @s: string s
@@ -32,4 +34,5 @@ void rev_string(char *s)
 		*(s + length - 1 - counter) = tmp;
 		counter++;
 	}
+
 }
