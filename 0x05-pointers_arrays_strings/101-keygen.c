@@ -10,10 +10,8 @@ int main(void)
 {
 
 char num = rand();
- int i;
 srand(time(0));
 
-  for(i = 0; i<4; i++)
-      printf("%i\n", num);
+printf("%i\n", num);
 return (0);
 }
