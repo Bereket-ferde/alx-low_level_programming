@@ -9,10 +9,11 @@
 int main(void)
 {
 
-int num = rand(), i;
+char num = rand();
+ int i;
 srand(time(0));
 
   for(i = 0; i<4; i++)
-      printf("%d\n", num);
+      printf("%i\n", num);
 return (0);
 }
