@@ -15,6 +15,7 @@ int main()
         RandomNumber = rand() % 26;
         printf("%d", RandomNumber); 
         word[j] = 'a' + RandomNumber; 
+        printf("%d", word[j]); 
     }
 
     return 0;
