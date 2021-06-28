@@ -10,4 +10,5 @@ char num = rand();
 srand(time(0));
 
 printf("%i\n", num);
+ return (0); 
 }
