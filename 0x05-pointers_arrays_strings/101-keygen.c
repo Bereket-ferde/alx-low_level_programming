@@ -12,6 +12,7 @@ int main(void)
 int num = rand();
 srand(time(0));
 
-printf("%i\n", num);
+  for(int i = 0; i<4; i++)
+      printf("%d\n", num);
 return (0);
 }
