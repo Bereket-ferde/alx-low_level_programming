@@ -3,22 +3,23 @@
 #include <stdlib.h>
 /**
  * main - main block
+ * last_no - last digit of the n number
  * Description: Get a random number and check its last digit, compare it with 5
  * Return: 0
  */
 int main(void)
 {
-	int n, last_digit;
+	int n, last_no;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	last_digit = n % 10;
-	if (last_digit > 5)
-		printf("Last digit of %i is %i and is greater than 5\n", n, last_digit);
-	else if (last_digit == 0)
-		printf("Last digit of %i is %i and is 0\n", n, last_digit);
-	else if (last_digit < 6 && last_digit != 0)
-		printf("Last digit of %i is %i and is less than 6 and not 0\n", n, last_digit);
+	last_no = n % 10;
+	if (last_no > 5)
+		printf("Last digit of %i is %i and is greater than 5\n", n, last_no);
+	else if (last_no == 0)
+		printf("Last digit of %i is %i and is 0\n", n, last_no);
+	else if (last_no < 6 && last_no != 0)
+		printf("Last digit of %i is %i and is less than 6 and not 0\n", n, last_no);
 
 	return (0);
 }
