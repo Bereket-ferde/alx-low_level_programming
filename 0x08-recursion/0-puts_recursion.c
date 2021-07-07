@@ -1,10 +1,11 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 /**
-* _puts_recursion - print the given character
-* *s - points the value of the given character
-*/
+ * _puts_recursion - print the given character
+ * *s - points the value of the given character
+ */
+
 void _puts_recursion(char *s)
 {
-printf("%s\n", s);
+  printf("%s\n", s);
 }
