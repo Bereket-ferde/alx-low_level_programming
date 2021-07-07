@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <holberton.h>
 /**
 * _puts_recursion - print the given character
 * *s - points the value of the given character
