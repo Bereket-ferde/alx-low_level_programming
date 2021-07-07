@@ -1,11 +1,15 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "holberton.h"
+
 /**
  * _puts_recursion - print the given character
  * *s - points the value of the given character
  */
-
 void _puts_recursion(char *s)
 {
-  printf("%s\n", s);
+        if (*s == '\0');
+        {
+              _putchar('\n');
+        }
+        _putchar(*s);
+        _puts_recursion(++s);
 }
