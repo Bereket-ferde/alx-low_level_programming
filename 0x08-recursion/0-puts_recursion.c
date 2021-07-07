@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 /**
 * _puts_recursion - print the given character
