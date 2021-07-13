@@ -1,4 +1,5 @@
 #!/bin/bash
+cd home/alx-low_level_programming/0x09-static_libraries
 gcc -c _putchar.c -o _putchar.o
 gcc -c 3-islower.c -o 3-islower.o
 gcc -c 4.isalpha.c -o 4.isalpha.o
