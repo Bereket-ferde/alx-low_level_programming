@@ -1,55 +1,64 @@
+#ifndef CALC
+#define CALC
+
 #include <stdio.h>
-#include "function_pointers.h"
+#include <string.h>
+#include <stdlib.h>
 
 /**
- * is_98 - check if a number is equal to 98
- * @elem: the integer to check
- *
- * Return: 0 if false, something else otherwise.
+ *op_add - adds two numbers
+ *@a:num1
+ *@b:num2
+ *Return: a + b
  */
-int is_98(int elem)
-{
-    return (98 == elem);
-}
+int op_add(int a, int b);
 
 /**
- * is_strictly_positive - check if a number is greater than 0
- * @elem: the integer to check
- *
- * Return: 0 if false, something else otherwise.
+ *op_sub - substracts two numbers
+ *@a:num1
+ *@b:num2
+ *Return: a - b
  */
-int is_strictly_positive(int elem)
-{
-    return (elem > 0);
-}
-
+int op_sub(int a, int b);
 
 /**
- * abs_is_98 - check if the absolute value of a number is 98
- * @elem: the integer to check
- *
- * Return: 0 if false, something else otherwise.
+ *op_mul - multiplies two numbers
+ *@a:num1
+ *@b:num2
+ *Return: a * b
  */
-int abs_is_98(int elem)
-{
-    return (elem == 98 || -elem == 98);
-}
+int op_mul(int a, int b);
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ *op_div - divides two numbers
+ *@a:num1
+ *@b:num2
+ *Return: a / b or error if b = 0
  */
-int main(void)
-{
-    int array[20] = {0, -98, 98, 402, 1024, 4096, -1024, -98, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 98};
-    int index;
+int op_div(int a, int b);
 
-    index = int_index(array, 20, is_98);
-    printf("%d\n", index);
-    index = int_index(array, 20, abs_is_98);
-    printf("%d\n", index);
-    index = int_index(array, 20, is_strictly_positive);
-    printf("%d\n", index);
-    return (0);
-}
+/**
+ *op_mod - modeule a to b
+ *@a:num1
+ *@b:num2
+ *Return: a % b
+ */
+int op_mod(int a, int b);
+
+
+int (*get_op_func(char *s))(int, int);
+
+/**
+ * struct op - Struct op
+ *
+ * @op: The operator
+ * @f: The function associated
+ */
+typedef struct op
+{
+	char *op;
+	int (*f)(int a, int b);
+} op_t;
+
+
+#endif /*CALC*/
