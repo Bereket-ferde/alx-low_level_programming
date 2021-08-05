@@ -1,5 +1,5 @@
   
-#include "main.h"
+#include "holberton.h"
 
 /**
  * get_bit - gets bit on index `index`
