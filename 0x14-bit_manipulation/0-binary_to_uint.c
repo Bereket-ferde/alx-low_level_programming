@@ -1,70 +1,62 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdlib.h>
 
 /**
- * _strlen - find the length of a string
- * @s: pointer to the string to check
- * Return: void
-*/
-
-
-int _strlen(char *s)
+ * powX - raises b to p
+ * @b: base
+ * @p: power
+ * Return: b the power of p
+ */
+int powX(int b, int p)
 {
-int i = 0;
-while (s[i])
-	i++;
+	int prod = 1;
 
-return (i);
+	while (p > 0)
+	{
+		prod *= b;
+		p--;
+	}
+	return (prod);
 }
-
 
 /**
- * _pow_recursion - Search a string for any of a set of bytes.
- * @x: base
- * @y: exposant
- * Return: Pointer to the byte in `s` that matches one of the bytes in `accept`
- * or NULL if no such byte is found.
+ * _len - length of a string
+ * @s:string
+ * Return: lenght of s
  */
-
-int _pow_recursion(int x, int y)
+int _len(const char *s)
 {
+	int len = 0;
 
-if (y < 0)
-	return (-1);
-else if (y == 1)
-	return (x);
-else if (y == 0)
-	return (1);
-
-return (x * _pow_recursion(x, y - 1));
-
+	while (*s)
+	{
+		len++;
+		s++;
+	}
+	return (len);
 }
-
-
 /**
  * binary_to_uint - converts a binary number to an unsigned int
- * @b: binary number
- *
- * Return: 0 or converted number
+ * @b: input string
+ * Return: unsigned decimal conversion, 0 if input is NULL
  */
-
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int n = 0;
-	int i, len;
+	int power;
+	int num = 0;
 
-	if (b == NULL)
+	if (!b)
 		return (0);
-	len = _strlen(b);
-	for (i = 0; b[i]; i++)
+	power = _len(b) - 1;
+	while (*b)
 	{
-		if (b[i] == '1')
-			n += _pow_recursion(2, (len - i - 1));
-		else if (b[i] != '0')
+		if (*b != '0' && *b != '1')
 			return (0);
+
+		if (*b == '1')
+			num += powX(2, power);
+		b++;
+		power--;
 	}
-
-	return (n);
+	return (num);
 }
-
-/*Use bitwise operations*/
