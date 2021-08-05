@@ -1,50 +1,31 @@
 #include "main.h"
-#define BIT_SIZE 8
 
 /**
- * powX - powers a number b to the p's power
- * @b : base
- * @p : power
- * Return: return b to the power of a
+ * print_binary - prints decimal to binary
+ * Description: first, finds the biggest exponent for 2, then go down
+ * to find the smaller values
+ * @n: decimal number
  */
-unsigned long int powX(int b, int p)
-{
-	unsigned long int ans = 1;
 
-	while (p)
-	{
-		ans *= b;
-		p--;
-	}
-	return (ans);
-}
-
-/**
- * print_binary - prints the binary representation of a number
- * @n: input integer
- */
 void print_binary(unsigned long int n)
 {
-	unsigned long int test = powX(2, sizeof(unsigned long int) * BIT_SIZE - 1);
-	int start = 0;
+int i, k, andmask, change;
+int firstOne = 0;
+unsigned long int max = 1;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
-	while (test)
-	{
-		if (!(test & n) && start)
-		{
-			_putchar('0');
-		}
-		else if (test & n)
-		{
-			_putchar('1');
-			start = 1;
-		}
-		test = test >> 1;
-	}
+for (max = 0, change = 0; max <=n; max = max << 1, change++)
 
+for (i = change; i >= 0 ; i--)
+{
+andmask = 1 << i;
+k = n & andmask;
+
+if (k != 0 && firstOne == 0)
+	firstOne = 1;
+
+if (firstOne != 0)
+	k == 0 ? _putchar('0') : _putchar('1');
+}
+if (firstOne == 0)
+	_putchar('0');
 }
